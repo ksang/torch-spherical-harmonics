@@ -36,7 +36,7 @@ except ImportError:
 def _init_sin_cos_terms(n: int, x: sym.Symbol, y: sym.Symbol, z: sym.Symbol):
     S = [0]
     C = [1]
-    for i in range(10):
+    for i in range(16):
         S.append(sym.simplify(x * S[i] + y * C[i]))
         C.append(sym.simplify(x * C[i] - y * S[i]))
     return S, C
